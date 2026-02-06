@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Studio Amanda Simplício</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Studio Amanda Simplício</h1>
+</header>
+
+<section class="agenda">
+  <h2>Agendamento</h2>
+
+  <form onsubmit="agendar(); return false;">
+    <input type="text" id="nome" placeholder="Seu nome" required>
+
+    <select id="servico" required>
+      <option value="">Escolha o serviço</option>
+      <option value="Escova">Escova</option>
+      <option value="Selagem">Selagem</option>
+      <option value="Mechas">Mechas</option>
+      <option value="Cílios">Cílios</option>
+      <option value="Sobrancelhas">Sobrancelhas</option>
+      <option value="Micropigmentação">Micropigmentação</option>
+      <option value="Penteado">Penteado</option>
+    </select>
+
+    <input type="date" id="data" required>
+    <input type="time" id="hora" required>
+
+    <button type="submit">Confirmar Agendamento</button>
+  </form>
+
+  <h3>Horários ocupados</h3>
+  <ul id="agendaLista"></ul>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
