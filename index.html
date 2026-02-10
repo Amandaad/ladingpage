@@ -32,13 +32,33 @@
     <input type="date" id="data" required>
     <input type="time" id="hora" required>
 
-    <button type="submit">Confirmar Agendamento</button>
+    <button onclick="enviarAgendamento()">Confirmar Agendamento</button>
   </form>
 
   <h3>Horários ocupados</h3>
   <ul id="agendaLista"></ul>
 </section>
 
-<script src="script.js"></script>
+<script src="script.js">
+  <script>
+function enviarAgendamento() {
+    const dados = {
+        cliente: document.getElementById("nome").value,
+        servico: document.getElementById("servico").value,
+        data: document.getElementById("data").value
+    };
+
+    fetch("http://127.0.0.1:5000/agendar", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(dados)
+    })
+    .then(res => res.json())
+    .then(res => alert(res.mensagem));
+}
+</script>
+</script>
 </body>
 </html>
